@@ -24,28 +24,27 @@ int main() {
         return 1;
     }
 
-    locationList1.sort();
-    locationList2.sort();
-
-    
-    int similarityScore, locationID, mul;
+    int similarityScore, locationID, count;
     int size = locationList1.size();
     std::list<int> dupeList;
 
     for (int i = 0; i < size; i++) {
-        mul = 0;
+        count = 0;
+
         locationID = locationList1.front();
+        locationList1.pop_front();
+
         dupeList = locationList2;
+
         for (int j = 0; j < size; j++) {
             if (locationID == dupeList.front()) {
-                mul++;
+                count++;
+                dupeList.pop_front();
             } else {
-                std::cout << locationID << " " << dupeList.front() << std::endl;
                 dupeList.pop_front();
             }
         }
-        similarityScore += (mul * locationID);
-        locationList1.pop_front();
+        similarityScore += (count * locationID);
     }
 
     std::cout << "The similarity score is: " << similarityScore << std::endl;

@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Include this file (and other project files)
+!.gitignore
+!README.md
+
+# Dont ignore directories
+!*/
+!*/Part1.cpp
+!*/Part2.cpp
+!*/input.txt
+!*/Makefile
+
