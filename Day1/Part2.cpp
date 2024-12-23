@@ -5,6 +5,10 @@
 int main() {
     std::ifstream inFile;
     inFile.open("input.txt");
+    if (!inFile) {
+        std::cerr << "Error opening file!" << std::endl;
+        return 1;
+    }
 
     std::list<int> locationList1;
     std::list<int> locationList2;
