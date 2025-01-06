@@ -1,4 +1,4 @@
-build: Part1.cpp
+build:
 	g++ -o Part1 Part1.cpp
 	g++ -o Part2 Part2.cpp
 
